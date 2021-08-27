@@ -9,53 +9,53 @@
   Задача: Отсортируйте игроков по количеству поражений, чтобы вывести таблицу лидеров.
   Решение.
     SELECT *
-	FROM Players
-	ORDER BY Losses;
+    FROM Players
+    ORDER BY Losses;
 3. Пирожные.
  Дано: Местная пекарня создает уникальные наборы пирожных. В каждом наборе три разных пирожных -таблица cakes (name,calories)
  Задача: Клиент хочет набор пирожных с минимальным количеством калорий и выберите первые три из списка.
  Решение.
     SELECT name, calories
-	FROM cakes
-	ORDER BY calories
-	LIMIT 3;
+    FROM cakes
+    ORDER BY calories
+    LIMIT 3;
 4. Диапазон заработной платы.
  Дано: таблица с именем Staff(id, firstname, lastname, salary)
  Задача: Запрос для вывода имен сотрудников, у которых заработная плата в диапазоне между 1500 и 1900.
  Решение.
     SELECT firstname
-	FROM staff
-	WHERE salary BETWEEN 1500 AND 1900;
+    FROM staff
+    WHERE salary BETWEEN 1500 AND 1900;
 5. Superheroes
  Дано: таблица Films (name, genre, year, production).
  Задача: запрос для вывода названий всех фильмов, которые были выпущены Marvel Studios в 2010 году или позже, отсортированных по столбцу name.
  Решение.  
-  SELECT name
-  FROM Films
-  WHERE production='Marvel_Studios' AND year >=2010
-  ORDER BY name;
+   SELECT name
+   FROM Films
+   WHERE production='Marvel_Studios' AND year >=2010
+   ORDER BY name;
 6. Поставщики.
  Дано: таблица поставщиков Suppliers (name, city, status)
  Задача: запрос для вывода тех же  деталей для поставщиков, которые находятся вне Лондона или Парижа.
  Решение.
-  SELECT *
-  FROM Suppliers
-  WHERE city NOT IN ('London', 'Paris');
+   SELECT *
+   FROM Suppliers
+   WHERE city NOT IN ('London', 'Paris');
 7. Подзапрос.
  Дано: таблица Foods(name, category, price, fatpercentage).
  Задача: запрос для выбора пищи, процент жирности которой ниже среднего по таблице Foods.
  Решение.
-  SELECT *
-  FROM Foods
-  WHERE fatpercentage <( SELECT AVG (fatpercentage) FROM Foods);
+   SELECT *
+   FROM Foods
+   WHERE fatpercentage <( SELECT AVG (fatpercentage) FROM Foods);
 8. Апартаменты.
  Дано: Есть таблица апартаментов Apartments (id, city, address, price, status)
  Задача: запрос для вывода в результат апартаментов, цена которых больше средней и которые не арендованы, отсортировав их по цене. 
  Решение.
-  SELECT *
-  FROM Apartments
-  WHERE price> ( SELECT AVG (price) FROM Apartments)
-  ORDER BY price asc;
+   SELECT *
+   FROM Apartments
+   WHERE price> ( SELECT AVG (price) FROM Apartments)
+   ORDER BY price asc;
 9. INNER JOIN
   Дано: В супермаркете есть товары, информация о  которых находится в двух таблицах 
         products (id, productname, price, categoryid) и
